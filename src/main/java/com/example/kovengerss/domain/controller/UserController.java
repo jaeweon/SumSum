@@ -5,6 +5,8 @@ import com.example.kovengerss.domain.vo.UserVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -100,22 +102,17 @@ public class UserController {
     public void getMarry(){
 
     }
-//    //     탈퇴
-//    @GetMapping("myPage")
-//    public String deleteForm(Integer userNum){
-//        log.info("----------------------------");
-//        log.info("remove............. : " + userNum);
-//        log.info("----------------------------");
-//
-//        return "myPage";
-//    }
-//    @PostMapping("myPage")
-//    public String delete(int userNum){
-//        log.info("----------------------------");
-//        log.info("remove............. : " + 2);
-//        log.info("----------------------------");
-//        userService.userDelete(2);
-//        return "main";
-//    }
 
+//    //회원 탈퇴
+//    @PostMapping("myPage/user")
+//    public void deleteUser(int userNum){
+//        System.out.println(userNum);
+//        userService.userDelete(userNum);
+//    }
+    //회원 탈퇴2
+    @PostMapping("myPage/user")
+    public String deleteUser(String userPw, Model model){
+        userService.userDeleteWithPw(userPw);
+        return "main";
+    }
 }

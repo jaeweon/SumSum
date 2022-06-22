@@ -23,4 +23,9 @@
         DELETE FROM TBL_USER
         WHERE USER_NUM = #{userNum}
     </delete>
+
+    <delete id="deleteWithPw">
+        DELETE FROM TBL_USER
+        WHERE USER_PW = #{userPw}
+    </delete>
 </mapper>

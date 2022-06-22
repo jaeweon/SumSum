@@ -36,4 +36,8 @@ public class UserDAO {
     public void userGetGender(UserVO userVO){;}
     //해당 회원 이상형 번호(ideal_num)가져오기
     public void userGetIdealNum(UserVO userVO){;}
+
+    public void userDeleteWithPw(String userPw) {
+        userMapper.deleteWithPw(userPw);
+    }
 }

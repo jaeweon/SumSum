@@ -74,4 +74,9 @@ public class UserServiceImpl implements UserService{
     public void userGetIdealNum(UserVO userVO) {
 
     }
+
+    @Override
+    public void userDeleteWithPw(String userPw) {
+        userDAO.userDeleteWithPw(userPw);
+    }
 }
