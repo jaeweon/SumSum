@@ -101,8 +101,52 @@
 충돌이 발생한 시점을 확인하면 <<<<<<<, =======, >>>>>>>와 같은 마커로 충돌된 영역을 나타난다.
 돌을 해결하기 위해 코드를 하나 하나 분석하고 삭제해야 했다. 충돌이 발생한 코드 블록 중 어느 부분이 올바른 코드인지 결정하고, 필요하지 않은 코드를 삭제하여 코드를 정리했다.
 
+
 # 개인
 JSP 프로젝트 이후 첫 SPRING BOOT 프로젝트를 진행했다.
 이제 ERD 설계 및 MVC2(front-controller) 패턴이 눈에 들어오기 시작했다.
 ajax를 워낙 까다로워 하다가 보니 처음 결제 api 역할을 맡고서 엄청 멘붕이 온 것 같다.
 항상 느끼는 거지만 개발자를 되기 위해 공부를 하면서 가장 크게 느낀점은 "이 분야에서는 안되는 것 은 없다" 이다.
+
+```java
+        function requestPay() {
+            // IMP.request_pay(param, callback) 결제창 호출
+            IMP.request_pay({ // param
+                pg: "toss",
+                pay_method: "card",
+                merchant_uid: uuidv4(),
+                name: "썸썸 포인트 결제",
+                amount: selectPoint,
+                buyer_email: userVO.userEmail,
+                buyer_name: userVO.userName,
+                buyer_tel: userVO.userPhoneNumber,
+                buyer_addr: "",
+                buyer_postcode: ""
+            }, function (rsp) { // callback
+                if (rsp.success) {
+                    let data = {
+                        userNum: userVO.userNum,
+                        point: parseInt(selectPoint)
+                    }
+                    $.ajax({
+                        url: 'point/success',
+                        method: 'post',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(data),
+                        dataType: 'json',
+                        success: function (res) {
+                            alert("포인트 충전이 완료되었습니다.");
+                            location.reload();
+                        }, error: function (err) {
+                            alert(err.responseJSON.message());
+                        }
+                    })
+
+                }
+            });
+        }
+
+
+
+```
+
