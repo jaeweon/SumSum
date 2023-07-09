@@ -1,5 +1,5 @@
-# SumSum(소개팅 사이트♥)
-프로젝트명 : SUM SUM 
+# ✔Spring Boot _ SUMSUM✔
+💘이상형 매칭 소개팅 플랫폼(SUMSUM) Spring Boot 프로젝트 By 코벤져스💘
 
 # 프로젝트 소개   
 자신의 이상형에 맞는 사람을 선택하여 호감을 전할 수 있는 매칭 플랫폼
