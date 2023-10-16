@@ -12,7 +12,7 @@
 ![image](https://github.com/kovengerss/SumSum/assets/34277606/1d7de255-2d48-4082-94ff-f46f37c5da50)
 
 
-
+ 
 ## 👤 이재원(팀장) 맡은 역할 : Business Tier
 
 # [front-end]
